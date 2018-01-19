@@ -1,0 +1,36 @@
+<div class="row text-left">
+  <div class="col col-6">
+    <form>
+      <div class="form-group">
+        <label for="endpointUrl">Your wallet</label>
+        <input [(ngModel)]="user.wallet" name="wallet" type="text" class="form-control" id="endpointUrl" aria-describedby="endpointUrl"
+          placeholder="0">
+      </div>
+      <div class="form-group">
+        <label for="endpointUrl">Your bidd</label>
+        <input [(ngModel)]="bidd" name="bidd" type="text" class="form-control" id="endpointUrl" aria-describedby="endpointUrl" placeholder="0">
+      </div>
+      <button type="submit" (click)="sendBidd()" class="btn btn-primary">Bidd!</button>
+    </form>
+  </div>
+  <div class="col col-6">
+    <h4>Bidders</h4>
+    <button type="button" class="btn btn-primary btn-lg" (click)="reload()">Reload</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <td>#</td>
+          <td>Name</td>
+          <td>Wallet</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bidder of bidders; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ bidder.name }}</td>
+          <td>{{ bidder.wallet }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
